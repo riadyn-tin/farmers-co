@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "OpenSauceOne-Regular"; /* Name of the font */
+  src: url("fonts/OpenSauceOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSauceOne-Bold"; /* Name of the font */
+  src: url("fonts/OpenSauceOne-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSauceOne-Light"; /* Name of the font */
+  src: url("fonts/OpenSauceOne-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+.homefade-in {
+  opacity: 1; /* Ensure it's visible initially */
+  transform: translateY(0); /* Ensure it's in the correct position */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.homefade-in:target {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.servicesfade-in {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.servicesfade-in:target {
+  opacity: 1; /* Fully visible when targeted */
+  transform: translateY(0); /* Move to original position */
+}
+
+body {
+  font-family: "OpenSauceOne-Regular", sans-serif;
+  background-color: #f9f9f9; /* Light background */
+  color: #333; /* Dark text */
+  text-align: center;
+  padding-top: 60px; /* Add padding to prevent content from being hidden behind the navbar */
+}
+
+header {
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  background-color: white; /* Background color for visibility */
+  z-index: 1000; /* Ensure it stays above other content */
+  padding: 10px 20px; /* Add some padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title {
+  padding: 40px;
+}
+
+.title h1 {
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif; /* Use your custom font */
+  font-size: 124px; /* Adjust size as needed */
+  font-weight: bold; /* Make it bold */
+  color: #69a301; /* Green color */
+  margin-bottom: -40px; /* Remove default margin */
+  line-height: 1.2; /* Adjust line height */
+  margin-left: -60px;
+}
+
+.title h2 {
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif; /* Use your custom font */
+  font-size: 124px; /* Adjust size as needed */
+  font-weight: bold; /* Make it bold */
+  color: #133903; /* Green color */
+  margin: 0; /* Remove default margin */
+  line-height: 1.2; /* Adjust line height */
+}
+
+.description {
+  font-family: "OpenSauceOne-Light", sans-serif;
+  font-size: 16px; /* Adjust size as needed */
+  max-width: 600px; /* Limit width for readability */
+  margin: 0 auto; /* Center the text block */
+  line-height: 1.5; /* Adjust line height for readability */
+  text-align: left; /* Center text */
+  margin-right: -30px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px; /* Adjust size as needed */
+  margin-right: 15px; /* Space between logo and text */
+}
+
+.company-name {
+  display: flex;
+  flex-direction: column; /* Stack the text vertically */
+  align-items: flex-start; /* Align text to the left */
+}
+
+.company-name h1 {
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif;
+  margin: 0; /* Remove default margin */
+  font-size: 26.8px; /* Adjust size as needed */
+  color: #133903; /* Green color */
+}
+
+.company-name h2 {
+  font-family: "OpenSauceOne-Regular", Arial, sans-serif;
+  font-weight: light;
+  margin: 0; /* Remove default margin */
+  font-size: 1em; /* Adjust size as needed */
+  line-height: 1; /* Ensure no extra space between lines */
+}
+
+nav {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space out items */
+  align-items: center;
+  width: 30%; /* Full width */
+}
+
+nav ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Use flexbox for the list */
+}
+
+nav ul li {
+  margin: 0 15px; /* Add margin for spacing between links */
+}
+
+nav ul li a {
+  color: #133903;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  position: relative;
+  padding: 20px;
+}
+
+.leaves {
+  position: relative;
+}
+
+.leaf {
+  position: absolute;
+  width: 600px; /* Adjust size as needed */
+  top: 100px;
+  left: 200px;
+}
+
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.section {
+  height: 100%;
+  opacity: 0; /* Start hidden */
+  transform: scale(0.9); /* Start scaled down */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+
+
+.logo-link {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s;
+  opacity: 0.8;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.logo-link img {
+  margin-top: 100px;
+  width: 50px;
+}
+
+.logo-link:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+  opacity: 1; /* Fully opaque on hover */
+}
+
+.services-content .logo-link {
+  /* Add your styles here */
+  display: flex; /* Example: make it a flex container */
+  justify-content: center; /* Center the logo */
+  opacity: 0.8;
+  margin-top: 20px; /* Add some margin */
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.services-content .logo-link img {
+  width: 50px; /* Adjust size as needed */
+  transition: transform 0.3s; /* Smooth transition for rotation */
+  display: block;
+}
+
+.services-content .logo-link:hover img {
+  transform: rotate(180deg);
+  opacity: 1; /* Rotate the image on hover */
+}

@@ -24,28 +24,6 @@ html {
   overflow: hidden;
 }
 
-.homefade-in {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.homefade-in:target {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.servicesfade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.servicesfade-in:target {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 body {
   font-family: "OpenSauceOne-Regular", sans-serif;
   background-color: #f9f9f9;
@@ -76,12 +54,12 @@ header {
 }
 
 .title {
-  padding: 40px;
+  padding: 100px;
 }
 
 .title h1 {
   font-family: "OpenSauceOne-Bold", Arial, sans-serif;
-  font-size: 124px;
+  font-size: 134px;
   font-weight: bold;
   color: #69a301;
   margin-bottom: -40px;
@@ -194,13 +172,6 @@ nav ul li a:hover {
   }
 }
 
-.section {
-  height: 100%;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
 .logo-link {
   display: flex;
   justify-content: center;
@@ -229,12 +200,764 @@ nav ul li a:hover {
 }
 
 .services-content .logo-link img {
-  width: 50px; 
-  transition: transform 0.3s; 
+  width: 50px;
+  transition: transform 0.3s;
   display: block;
 }
 
 .services-content .logo-link:hover img {
   transform: rotate(180deg);
-  opacity: 1; 
+  opacity: 1;
+}
+
+/* Hide the button when the services section is targeted */
+#services:target ~ #home .button-container {
+  display: none; /* Hide the button */
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px; /* Adjust based on header height */
+}
+#home {
+  background-color: #f0f0f0; /* Example background color */
+}
+
+#services {
+  background-color: #e0e0e0; /* Example background color */
+}
+
+/* Add a transition effect to buttons */
+button {
+  background-color: #133903;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #69a301;
+  transform: scale(1.05);
+}
+
+/* Add a transition effect to images */
+img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+.scroll-button {
+  position: absolute;
+  bottom: 100px;
+  right: -40px;
+  width: 150px; /* Adjust size as needed */
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.scroll-button img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.scroll-button:hover {
+  transform: scale(1.1);
+}
+
+.products-content {
+  margin-top: 0;
+  padding-top: 10px;
+}
+
+.products-title {
+  margin-top: 0;
+}
+
+.products-title h1,
+.products-title h2 {
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif;
+  font-size: 40px;
+  color: #133903;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  display: grid;
+  place-items: center;
+  height: 300px; /* Adjust height as needed */
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  background: #ddd;
+  border-radius: 2rem;
+  box-shadow: inset 10px 10px 10px #999, -10px -10px 10px #fff;
+  width: 150px;
+  aspect-ratio: 1;
+  transition: transform 1s;
+  position: relative;
+}
+
+.product-card img {
+  position: absolute;
+  width: 50%; /* Adjust size as needed */
+  translate: -50% -50%;
+  transition: transform 1s;
+  inset: 50%;
+}
+
+.product-card:hover {
+  transform: translateZ(100px) rotateX(75deg);
+  box-shadow: 10px 10px 10px #999, -10px -10px 10px #fff;
+}
+
+.product-card:hover img {
+  transform: translateY(-90px) translateZ(250px);
+}
+
+.product-card h3 {
+  font-family: "OpenSauceOne-Regular", sans-serif;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-centerY-centerX {
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+.page-wrapper {
+  height: 100%;
+  display: table;
+}
+
+.page-wrapper .page-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.el-wrapper {
+  width: 360px;
+  padding: 15px;
+  margin: 15px auto;
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .el-wrapper {
+    width: 345px;
+  }
+}
+
+@media (max-width: 767px) {
+  .el-wrapper {
+    width: 290px;
+    margin: 30px auto;
+  }
+}
+
+.el-wrapper:hover .h-bg {
+  left: 0px;
+}
+
+.el-wrapper:hover .price {
+  left: 20px;
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+
+.el-wrapper:hover .add-to-cart {
+  left: 50%;
+}
+
+.el-wrapper:hover .img {
+  filter: blur(7px);
+  opacity: 0.4;
+}
+
+.el-wrapper:hover .info-inner {
+  bottom: 155px;
+}
+
+.el-wrapper:hover .a-size {
+  transition-delay: 300ms;
+  bottom: 50px;
+  opacity: 1;
+}
+
+.el-wrapper .box-down {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.el-wrapper .box-up {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.el-wrapper .img {
+  width: 100%; /* Make the image take the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+  transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+}
+
+.h-bg {
+  transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
+  width: 660px;
+  height: 100%;
+  background-color: #464646;
+  position: absolute;
+  left: -659px;
+}
+
+.h-bg .h-bg-inner {
+  width: 50%;
+  height: 100%;
+  background-color: #133903;
+}
+
+.info-inner {
+  transition: all 400ms cubic-bezier(0, 0, 0.18, 1);
+  position: absolute;
+  width: 100%;
+  bottom: 25px;
+}
+
+.info-inner .p-name,
+.info-inner .p-company {
+  display: block;
+}
+
+.info-inner .p-name {
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif;
+  font-size: 18px;
+  color: #252525;
+}
+
+.info-inner .p-company {
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #8c8c8c;
+}
+
+.a-size {
+  transition: all 300ms cubic-bezier(0, 0, 0.18, 1);
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif;
+  color: #828282;
+  opacity: 0;
+}
+
+.a-size .size {
+  color: #252525;
+}
+
+.cart {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-family: "OpenSauceOne-Bold", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.cart .price {
+  transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+  transition-delay: 100ms;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #000000;
+}
+
+.cart .add-to-cart {
+  transition: all 600ms cubic-bezier(0, 0, 0.18, 1);
+  transition-delay: 100ms;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translate(-50%, -50%);
+}
+
+.cart .add-to-cart .txt {
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.products .announcement-bar {
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  overflow: hidden;
+  height: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.announcement-text {
+  display: inline-block;
+  animation: slide-horizontal 40s infinite;
+}
+
+@keyframes slide-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.products-content {
+  margin-top: 0px; /* Remove any top margin */
+  padding-top: 10px; /* Adjust padding as needed */
+}
+
+.products-title {
+  margin-top: 0; /* Remove any top margin */
+}
+.warning-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; /* Light background */
+  color: #555; /* Subtle text color */
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px;
+  font-family: "OpenSauceOne-Regular";
+}
+
+.warning-icon {
+  margin-top: -5px;
+  font-family: "OpenSauceOne-Regular";
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 16px; /* Slightly larger icon */
+}
+
+.team {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.team h2 {
+  align-items: center;
+  margin-top: -50px;
+}
+
+.team h1 {
+  align-items: center;
+}
+
+.team-content {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 250px;
+}
+
+.team-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.center h1 {
+  color: #133903;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.team-content .box {
+  position: relative;
+  padding: 16px;
+  background: #000000;
+  border-radius: 15px;
+  transition: all 0.38s ease;
+}
+
+.team-content .box:hover::after {
+  display: flex;
+  margin-bottom: 10px;
+  width: 500;
+
+  content: attr(data-description);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.team-content .box::after {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.box h3 {
+  font-size: 23px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.box h5 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #69a301;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.icons i {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  margin: 0 8px;
+  transition: all 0.38s ease;
+}
+
+.icons i:hover {
+  transform: scale(1.2);
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.about-us-bg {
+  background-image: url("images/about-bg.png");
+  background-position: 105% center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(255, 255, 255, 0.8); /* Example for a subtle effect */
+}
+
+
+.contact-section * {
+  box-sizing: border-box;
+  font-family: "OpenSauceOne-Regular", sans-serif;
+}
+
+.contact-section body {
+  line-height: 1.6;
+  font-family: "OpenSauceOne-Regular", sans-serif;
+  padding: 1em;
+}
+
+.contact-section .container {
+  max-width: 1200px;
+  margin-left: 400px;
+  margin-right: auto;
+  padding: 8em;
+}
+
+.contact-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-section .brand {
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contact-section .brand span {
+  color: #ffffff;
+}
+
+.contact-section .wrapper {
+  box-shadow: 0 0 20px 0 rgb(0, 49, 13);
+}
+
+.contact-section .wrapper > * {
+  padding: 1em;
+  
+}
+
+/* ------------------- */
+/* COMPANY INFORMATION */
+/* ------------------- */
+
+.contact-section .company-info {
+  background: #091d01;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.contact-section .company-info h3,
+.contact-section .company-info ul {
+  font-family: "OpenSauceOne-Regular", sans-serif;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  color: white; 
+}
+
+.contact-section .company-info ul {
+  font-family: "OpenSauceOne-Regular", sans-serif;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-section .company-info li {
+  font-family: "OpenSauceOne-Regular", sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-section .company-info i {
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: #216803;
+}
+
+/* ------- */
+/* CONTACT */
+/* ------- */
+
+.contact-section .contact {
+  background: #081801;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* ---- */
+/* FORM */
+/* ---- */
+
+.contact-section .contact form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.contact-section .contact form label {
+  display: block;
+}
+
+.contact-section .contact form p {
+  margin: 0;
+}
+
+.contact-section .contact form .full {
+  grid-column: 1 / 3;
+}
+
+.contact-section .contact form button,
+.contact-section .contact form input,
+.contact-section .contact form textarea {
+  width: 100%;
+  padding: 1em;
+  border: solid 1px #388645;
+  border-radius: 4px;
+}
+
+.contact-section .contact form textarea {
+  resize: none;
+}
+
+.contact-section .contact form button {
+  background: #133903;
+  border: 0;
+  color: #e4e4e4;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.contact-section .contact form button:hover,
+.contact-section .contact form button:focus {
+  background: red;
+  color: #ffffff;
+  outline: 0;
+  transition: background-color 1s ease-out;
+}
+
+/* ------------- */
+/* MEDIA QUERIES */
+/* ------------- */
+
+@media only screen and (min-width: 1000px) {
+  .contact-section .wrapper {
+    
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .contact-section .wrapper > * {
+    padding: 2em;
+  }
+
+  .contact-section .company-info {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .contact-section .contact {
+    border-radius: 0 4px 4px 0;
+  }
+
+  .contact-section .company-info h3,
+  .contact-section .company-info ul,
+  .contact-section .brand {
+    text-align: left;
+  }
+}
+
+.contact-section .contact h3,
+.contact-section .contact form label {
+  color: white; /* Change text color to white */
+}
+
+.contact-section .contact form input,
+.contact-section .contact form textarea {
+  color: #333; /* Keep input text color dark for readability */
+  background-color: white; /* Ensure input background is white */
+}
+
+.contact-bg {
+  background-image: url("images/contact-bg.png");
+  background-position: 120% center;
+  transform: rotate(10);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(255, 255, 255, 0.8); /* Example for a subtle effect */
+}
+
+.contact-logo {
+  margin: 50px auto;
+  height: auto;
+  width: 150px;
+}
+
+.back-to-home {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%;
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.back-to-home img {
+  width: 100%;
+  height: auto;
+}
+
+#contact:target .back-to-home {
+  display: flex; /* Show when #contact is targeted */
+}
+
+.back-to-home:hover {
+  transform: scale(1.1);
 }
